@@ -10,7 +10,7 @@ public class RegioesRandom {
         String integrantes[] = {"Zimzum", "Bovinator", "Earendel", "Lammazzus", "Fan do Hasbulla", "Mix"};
         
 
-        int quantidadeDeJogos = 1;
+        int quantidadeDeJogos = 3;
 
         for (int q=0; q < quantidadeDeJogos; q++){
             System.out.println("Jogo " + (q+1));
