@@ -63,6 +63,51 @@ public class EstoqueService {
 
     }
 
+    //adicionar quantidade
+
+    public void addAmmount (int code, int ammount){
+        Item item = getByCode(code);
+        if (item == null) {
+            System.out.println("Código inválido");
+        } else {
+            item.addQuantity(ammount);
+        }
+    }
+
+    //remover quantidade
+
+    public void removeAmmount (int code, int ammount){
+        Item item = getByCode(code);
+        if (item == null) {
+            System.out.println("Código inválido");
+        } else {
+            item.removeQuantity(ammount);
+        }
+    }
+
+    //busca especial
+
+    public void specialSearch (String search){
+        for (Item item : stock) {
+            if (String.valueOf(item.getCode()).equals(search) || item.getName().contains(search)){
+                System.out.println(item);
+            }
+        }
+    }
+
+    //Retorna nome do item
+
+    public String itemName (int code){
+        Item item = getByCode(code);
+        if (item == null) {
+            String erro = "item não encontrado";
+            return erro;
+        } else {
+        return item.getName();
+        }
+    }
+    
+
     private Item getByCode (int code){
         for (Item item : stock) {
             if (item.getCode() == code){

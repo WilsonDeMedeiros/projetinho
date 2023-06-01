@@ -3,7 +3,7 @@ package Estoque.entity;
 public class Item {
     private int code;
     private String name;
-    int quantity;
+    private int quantity;
     float value;
 
     public Item (int code, String name, float value) {
@@ -11,6 +11,22 @@ public class Item {
         this.name = name;
         this.value = value;
         quantity = 0;
+    }
+
+    public int getQuantity(){
+        return quantity;
+    }
+
+    public void addQuantity (int ammount){
+        quantity += ammount;
+    }
+
+    public void removeQuantity (int ammount){
+        if (ammount > quantity){
+            System.out.println("Quantidade inválida. Disponível em estoque: " + quantity);
+        } else {
+            quantity -= ammount;
+        }
     }
 
     public float totalValue(){
